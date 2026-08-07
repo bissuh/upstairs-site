@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Upstairs</title>
+<meta name="description" content="Help with Upstairs: unsupported archive formats, missing messages, export, purchases and restoring Premium.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+    <div class="mark" role="img" aria-label="Upstairs app icon"></div>
+    <div class="wordmark">Upstairs<span>PST &amp; OST Viewer</span></div>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html" aria-current="page">Support</a>
+</nav>
+
+<h1>Support</h1>
+
+<p class="lede">Email <a href="mailto:support@tecnosolve.com">support@tecnosolve.com</a> and you will get a
+reply from a person. Most answers are below.</p>
+
+<div class="panel">
+<h3 style="margin-top:0">Before you write</h3>
+<p>If an archive will not open, the error message on screen names the specific reason.
+Including that exact wording in your email will usually get the problem solved in one
+reply instead of three.</p>
+<p><strong>Please do not send us your archive.</strong> It is your mail, we have no secure
+way to receive it, and we do not want a copy. If we need to reproduce something, we will
+ask you for the error text and the file's size and origin — never its contents.</p>
+</div>
+
+<h2>Opening archives</h2>
+
+<h3>"This archive uses the older ANSI format"</h3>
+<p>The file was made by Outlook 97–2002, which used a different 32-bit layout. Upstairs
+does not read it yet. If you still have access to a Windows PC with Outlook, opening the
+file there and exporting a new <code>.pst</code> produces the modern Unicode format, which
+Upstairs does read.</p>
+
+<h3>"This OST uses 4 KB pages"</h3>
+<p>Outlook 2013 and later write <code>.ost</code> files with a page layout Upstairs does
+not parse yet. It refuses by name rather than showing you a mangled archive. This is a
+known gap and is on the list to fix.</p>
+
+<h3>The file is password-protected</h3>
+<p>Archives protected with a password set inside Outlook cannot be opened without it, and
+Upstairs will not attempt to guess or bypass one.</p>
+
+<h3>A file I opened before now says it cannot be found</h3>
+<p>It was moved, renamed, or is on a drive that is not connected. Open it again from
+<em>Open Archive…</em> and the entry will start working again.</p>
+
+<h2>Reading and searching</h2>
+
+<h3>A message body is empty</h3>
+<p>Some messages genuinely have no body — calendar invitations and read receipts, for
+instance. If a message that should have text renders blank, that is a bug we want to hear
+about. Tell us roughly what it was (an HTML newsletter, a plain reply, a forwarded chain)
+and which version of Outlook the archive came from.</p>
+
+<h3>Search does not find something I can see</h3>
+<p>Indexing runs in the background when an archive is first opened, and search only covers
+what has been indexed so far. On a large archive give it a few minutes. Accents and case
+are ignored deliberately, so <em>cafe</em> matches <em>café</em>.</p>
+
+<h3>Images are not loading</h3>
+<p>That is deliberate. Remote images are blocked until you press <em>Load Images</em>,
+because loading one tells the sender's server that you opened the message. The banner at
+the top of the message is the switch.</p>
+
+<h2>Export</h2>
+
+<h3>Where do exported messages go?</h3>
+<p>You choose the destination when you export. Files are written as <code>.eml</code>,
+which Mail, Thunderbird and most other mail clients open directly. Attachments can be
+saved separately, and a whole folder can be exported at once.</p>
+
+<h3>Export is greyed out</h3>
+<p>Export is a Premium feature. See below.</p>
+
+<h2>Free tier and Premium</h2>
+
+<h3>What is free?</h3>
+<p>Browsing your folders and searching the whole archive are unlimited and free,
+permanently. The free tier opens ten messages a day.</p>
+
+<h3>What does Premium add?</h3>
+<p>It removes the daily limit and unlocks export. <strong>It is a single one-time
+purchase — there is no subscription</strong>, and one purchase covers your Mac, iPad and
+iPhone using the same Apple Account. It is also family-shareable.</p>
+
+<h3>Is there a subscription?</h3>
+<p>No. You buy Premium once and it stays unlocked, including on devices you buy later.
+Most people open Upstairs because they have one archive they need to get into, and
+charging a recurring fee for a job you do once would be wrong.</p>
+
+<h3>I bought Premium but it is not active on this device</h3>
+<p>Use <em>Restore Purchases</em> in the app, and check the device is signed in to the
+same Apple Account you bought with. This is the normal way to get Premium onto a new
+device or after reinstalling — nothing is lost. If it still does not appear, email us with
+the date of purchase — not your receipt, which contains more than we need.</p>
+
+<h3>Refunds</h3>
+<p>Apple handles all billing, so we cannot issue a refund ourselves. Request one at
+<a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. There is no
+subscription to cancel.</p>
+
+<h2>Privacy</h2>
+
+<h3>Does Upstairs send my mail anywhere?</h3>
+<p>No, and it cannot: the app ships without network permission. The
+<a href="privacy.html">privacy policy</a> shows how to verify that yourself in one
+command.</p>
+
+<h3>Can Upstairs damage my archive?</h3>
+<p>No. Archives are opened read-only. The app has no code path that writes to them.</p>
+
+<h2>Reporting a bug or asking for a feature</h2>
+
+<p>Email <a href="mailto:support@tecnosolve.com">support@tecnosolve.com</a>. Useful things to include:</p>
+
+<ul>
+    <li>What you did and what happened instead</li>
+    <li>The exact error text, if there was one</li>
+    <li>Which device and OS version</li>
+    <li>Roughly how big the archive is, and which Outlook version produced it</li>
+</ul>
+
+<p>Repeated requests for the same thing are the clearest signal we get about what to build
+next, so it is worth writing even if you assume someone else already has.</p>
+
+<footer>
+    <p>Upstairs is not affiliated with, endorsed by, or sponsored by Microsoft Corporation.
+    Outlook is a trademark of Microsoft Corporation, used here only to describe the file
+    format Upstairs reads.</p>
+    <p><a href="index.html">Home</a> · <a href="privacy.html">Privacy</a></p>
+</footer>
+
+</div>
+</body>
+</html>

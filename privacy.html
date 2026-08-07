@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Upstairs</title>
+<meta name="description" content="Upstairs collects no data. It has no network permission, no account system and no server.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+    <div class="mark" role="img" aria-label="Upstairs app icon"></div>
+    <div class="wordmark">Upstairs<span>PST &amp; OST Viewer</span></div>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="privacy.html" aria-current="page">Privacy</a>
+    <a href="support.html">Support</a>
+</nav>
+
+<h1>Privacy Policy</h1>
+
+<p class="lede">Upstairs collects nothing. This page explains why that is a structural
+fact rather than a promise, and what the few local exceptions are.</p>
+
+<p><strong>Last updated:</strong> 7 August 2026 · Applies to Upstairs for iPadOS, iOS and
+macOS, version 1.0 and later.</p>
+
+<div class="claim">
+<h2 style="margin-top:0">The short version</h2>
+<p>We do not collect, transmit, store, sell or share any personal data. We could not if we
+wanted to: the app ships without network permission, has no account system, and there is
+no server behind it.</p>
+</div>
+
+<h2>Data we collect</h2>
+
+<p>None.</p>
+
+<p>Specifically, and matching the answers we filed in Apple's App Privacy questionnaire —
+where every category is marked <em>Data Not Collected</em>:</p>
+
+<table>
+    <tr><th>Category</th><th>Collected</th></tr>
+    <tr><td>Contact info (name, email, phone, address)</td><td>No</td></tr>
+    <tr><td>Health, fitness, financial info</td><td>No</td></tr>
+    <tr><td>Location</td><td>No</td></tr>
+    <tr><td>Contacts</td><td>No</td></tr>
+    <tr><td>User content (your mail, attachments, search terms)</td><td>No</td></tr>
+    <tr><td>Browsing or search history</td><td>No</td></tr>
+    <tr><td>Identifiers (user ID, device ID, advertising ID)</td><td>No</td></tr>
+    <tr><td>Usage data, analytics, diagnostics, crash logs</td><td>No</td></tr>
+    <tr><td>Purchases</td><td>No — see <a href="#purchases">In-app purchases</a></td></tr>
+</table>
+
+<h2>Why this is verifiable rather than a promise</h2>
+
+<p>A privacy policy is usually a statement of intent. This one describes a property of the
+software that you can check yourself.</p>
+
+<p>The macOS build is distributed without the
+<code>com.apple.security.network.client</code> entitlement. Under macOS's App Sandbox, an
+app without that entitlement is prevented by the operating system from opening outbound
+network connections — regardless of what its code tries to do. To confirm it, run:</p>
+
+<pre><code>codesign -d --entitlements - /Applications/Upstairs.app</code></pre>
+
+<p>and look for <code>com.apple.security.network.client</code> in the output. It is not
+there.</p>
+
+<p>On the development side the same rule is enforced mechanically: an automated test scans
+every source file for networking symbols and fails the build if any appear outside the
+single file that talks to Apple's StoreKit framework.</p>
+
+<h2>Your mail archives</h2>
+
+<p>Archives you open stay on your device. Upstairs opens them <strong>read-only</strong>
+and cannot modify them. It builds a local search index alongside the archive so that
+searching is fast; that index lives in the app's own storage on your device, is never
+transmitted, and is deleted when you remove the app.</p>
+
+<p>When you grant access to a file, the app stores a security-scoped bookmark so that it
+can reopen the same file later without asking again. The bookmark is an operating-system
+token stored locally. It is not readable by us and goes nowhere.</p>
+
+<h2>Remote images in messages</h2>
+
+<p>Mail messages frequently contain images hosted on someone else's server. Loading one
+tells that server you opened the message. Upstairs blocks all remote content by default
+and shows a banner instead. If you choose to load images for a specific message, your
+device fetches them directly from whoever hosts them — that request goes to them, not to
+us, and it happens only because you asked for it.</p>
+
+<h2 id="purchases">In-app purchases</h2>
+
+<p>Premium is a one-time purchase sold through Apple's In-App Purchase system. There is no
+subscription. Payment and refunds are handled entirely by Apple. We never see your payment
+details, and we receive no personally identifying information about you from Apple.</p>
+
+<p>The app asks Apple's StoreKit framework whether this Apple Account currently holds a
+Premium entitlement and stores the yes-or-no answer locally. That exchange is between your
+device and Apple. Apple's own privacy policy governs it:
+<a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a>.</p>
+
+<h2>What is stored on your device</h2>
+
+<table>
+    <tr><th>What</th><th>Why</th></tr>
+    <tr><td>Recent archives list</td><td>So you can reopen a file without finding it again</td></tr>
+    <tr><td>Security-scoped bookmarks</td><td>So reopening does not re-prompt for permission</td></tr>
+    <tr><td>Search index</td><td>So search is fast on large archives</td></tr>
+    <tr><td>Free-tier daily counter</td><td>To apply the ten-messages-a-day free limit</td></tr>
+    <tr><td>Premium entitlement flag</td><td>So Premium works offline</td></tr>
+</table>
+
+<p>All of it is local, all of it is removed when you delete the app, and none of it is
+transmitted anywhere.</p>
+
+<h2>Children</h2>
+
+<p>Upstairs is rated 4+ and is safe for any age, because it displays only files the user
+already has. It collects no data from anyone, including children under 13.</p>
+
+<h2>Third parties</h2>
+
+<p>There are none. No analytics provider, no advertising network, no crash reporter, no
+third-party SDK of any kind. Nothing is shared, because nothing is collected.</p>
+
+<h2>Your rights</h2>
+
+<p>Regulations such as the GDPR, the CCPA and Brazil's LGPD give you rights to access,
+correct, port and erase personal data a company holds about you. We hold none, so there is
+nothing to access, correct, port or erase. Deleting the app removes everything Upstairs
+stored, all of which was on your device.</p>
+
+<h2>Changes to this policy</h2>
+
+<p>If a future version of Upstairs ever needs to collect anything, this page will be
+updated before that version ships, and the change will be described in the app's release
+notes rather than made quietly.</p>
+
+<h2>Contact</h2>
+
+<p>Questions about this policy: <a href="mailto:support@tecnosolve.com">support@tecnosolve.com</a></p>
+
+<footer>
+    <p>Upstairs is not affiliated with, endorsed by, or sponsored by Microsoft Corporation.
+    Outlook is a trademark of Microsoft Corporation, used here only to describe the file
+    format Upstairs reads.</p>
+    <p><a href="index.html">Home</a> · <a href="support.html">Support</a></p>
+</footer>
+
+</div>
+</body>
+</html>
