@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Upstairs — open .pst and .ost mail archives on iPad and Mac</title>
-<meta name="description" content="Upstairs opens Microsoft Outlook .pst and .ost mail archives on iPad and Mac, entirely offline. No account, no upload, no network permission.">
+<title>Upstairs: open .pst, .ost and .mbox mail archives on iPad and Mac</title>
+<meta name="description" content="Upstairs opens Microsoft Outlook .pst and .ost mail archives, plus .mbox mailboxes from Google Takeout or Apple Mail, on iPad and Mac, entirely offline. No account, no upload, no network permission.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,12 +24,14 @@
 <h1>You have a file nothing will open.</h1>
 
 <p class="lede">Upstairs reads Microsoft Outlook <code>.pst</code> and <code>.ost</code>
-mail archives on your iPad and your Mac — the folders, the messages, the attachments —
-without sending any of it anywhere.</p>
+mail archives, plus <code>.mbox</code> mailboxes from Google Takeout or Apple Mail, on
+your iPad and your Mac. The folders, the messages, the attachments, without sending any
+of it anywhere.</p>
 
-<p>An export from a job you left. A backup from a computer you no longer own. An archive
-someone handed you on a drive because it was the only way to hand it over. It is full of
-things you might need, and nothing on your Mac or iPad opens it.</p>
+<p>An export from a job you left. Your Gmail, downloaded from Google Takeout. A backup
+from a computer you no longer own. An archive someone handed you on a drive because it
+was the only way to hand it over. It is full of things you might need, and nothing on
+your Mac or iPad opens it.</p>
 
 <p>Upstairs opens it.</p>
 
@@ -49,11 +51,11 @@ things you might need, and nothing on your Mac or iPad opens it.</p>
 </ul>
 
 <div class="claim">
-<h2 style="margin-top:0">Nothing leaves your device — literally</h2>
+<h2 style="margin-top:0">Nothing leaves your device. Literally.</h2>
 <p>Most apps that say this mean they promise not to upload your data. Upstairs means
 something stronger and checkable: <strong>it ships without network permission at all.</strong>
 The app has no ability to open a connection, so the promise is not a policy that could
-change — it is a property of the binary.</p>
+change. It is a property of the binary.</p>
 <p>You do not have to take our word for it. On a Mac, in Terminal:</p>
 <pre><code>codesign -d --entitlements - /Applications/Upstairs.app</code></pre>
 <p><code>com.apple.security.network.client</code> is absent from the output. That is the
@@ -61,27 +63,30 @@ entitlement an app needs to reach the network, and Upstairs does not have it.</p
 <p>No account. No sign-in. No server, so there is no database of you anywhere. No
 analytics, no crash reporting, no advertising identifiers. Remote images in messages stay
 blocked until you ask for them, so opening an old newsletter does not tell the sender you
-are still reading. And your archive is opened read-only — Upstairs cannot modify it even
+are still reading. And your archive is opened read-only, so Upstairs cannot modify it even
 by accident.</p>
 </div>
 
 <h2>What's supported</h2>
 
 <p>Unicode <code>.pst</code> and <code>.ost</code> archives from Outlook 2003 onward,
-including compressed and encoded archives.</p>
+including compressed and encoded archives. And <code>.mbox</code> mailboxes, the format
+Google Takeout uses for Gmail exports and Apple Mail uses for its own, with Gmail's
+labels appearing as folders.</p>
 
 <p>Two things are honestly not supported yet, and Upstairs says so clearly on screen
 rather than failing quietly:</p>
 
 <ul>
-    <li>The 32-bit ANSI format from Outlook 97–2002.</li>
+    <li>The 32-bit ANSI format from Outlook 97-2002.</li>
     <li>Outlook 2013 and later <code>.ost</code> files that use 4&nbsp;KB pages.</li>
 </ul>
 
 <h2>Free and Premium</h2>
 
-<p>Browsing and search are unlimited and free, permanently. The free tier opens ten
-messages a day. Premium removes that limit and unlocks export.</p>
+<p>Browsing and search are unlimited and free, permanently. The free tier opens five
+messages, enough to confirm the archive really is what you think it is. Premium removes
+that limit and unlocks export.</p>
 
 <p><strong>Premium is a one-time purchase. There is no subscription.</strong> You buy it
 once, it covers your Mac, iPad and iPhone, and it stays yours on devices you buy later.
