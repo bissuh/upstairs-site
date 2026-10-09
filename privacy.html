@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy — Upstairs</title>
+<title>Privacy Policy: Upstairs</title>
 <meta name="description" content="Upstairs collects no data. It has no network permission, no account system and no server.">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -40,7 +40,7 @@ no server behind it.</p>
 
 <p>None.</p>
 
-<p>Specifically, and matching the answers we filed in Apple's App Privacy questionnaire —
+<p>Specifically, and matching the answers we filed in Apple's App Privacy questionnaire,
 where every category is marked <em>Data Not Collected</em>:</p>
 
 <table>
@@ -53,7 +53,7 @@ where every category is marked <em>Data Not Collected</em>:</p>
     <tr><td>Browsing or search history</td><td>No</td></tr>
     <tr><td>Identifiers (user ID, device ID, advertising ID)</td><td>No</td></tr>
     <tr><td>Usage data, analytics, diagnostics, crash logs</td><td>No</td></tr>
-    <tr><td>Purchases</td><td>No — see <a href="#purchases">In-app purchases</a></td></tr>
+    <tr><td>Purchases</td><td>No. See <a href="#purchases">In-app purchases</a></td></tr>
 </table>
 
 <h2>Why this is verifiable rather than a promise</h2>
@@ -64,7 +64,7 @@ software that you can check yourself.</p>
 <p>The macOS build is distributed without the
 <code>com.apple.security.network.client</code> entitlement. Under macOS's App Sandbox, an
 app without that entitlement is prevented by the operating system from opening outbound
-network connections — regardless of what its code tries to do. To confirm it, run:</p>
+network connections, regardless of what its code tries to do. To confirm it, run:</p>
 
 <pre><code>codesign -d --entitlements - /Applications/Upstairs.app</code></pre>
 
@@ -91,7 +91,7 @@ token stored locally. It is not readable by us and goes nowhere.</p>
 <p>Mail messages frequently contain images hosted on someone else's server. Loading one
 tells that server you opened the message. Upstairs blocks all remote content by default
 and shows a banner instead. If you choose to load images for a specific message, your
-device fetches them directly from whoever hosts them — that request goes to them, not to
+device fetches them directly from whoever hosts them, and that request goes to them, not to
 us, and it happens only because you asked for it.</p>
 
 <h2 id="purchases">In-app purchases</h2>
@@ -112,7 +112,7 @@ device and Apple. Apple's own privacy policy governs it:
     <tr><td>Recent archives list</td><td>So you can reopen a file without finding it again</td></tr>
     <tr><td>Security-scoped bookmarks</td><td>So reopening does not re-prompt for permission</td></tr>
     <tr><td>Search index</td><td>So search is fast on large archives</td></tr>
-    <tr><td>Free-tier daily counter</td><td>To apply the ten-messages-a-day free limit</td></tr>
+    <tr><td>Free-tier read ledger</td><td>To apply the five-message free limit, and to keep messages you already opened free to reopen</td></tr>
     <tr><td>Premium entitlement flag</td><td>So Premium works offline</td></tr>
 </table>
 
