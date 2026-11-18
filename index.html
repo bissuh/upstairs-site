@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Upstairs: open .pst, .ost and .mbox mail archives on iPad and Mac</title>
-<meta name="description" content="Upstairs opens Microsoft Outlook .pst and .ost mail archives, plus .mbox mailboxes from Google Takeout or Apple Mail, on iPad and Mac, entirely offline. No account, no upload, no network permission.">
+<meta name="description" content="Upstairs opens Microsoft Outlook .pst and .ost mail archives, plus .mbox mailboxes from Google Takeout or Apple Mail, on iPad and Mac, entirely offline. No account, no upload, no server to send it to.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -53,10 +53,13 @@ your Mac or iPad opens it.</p>
 <div class="claim">
 <h2 style="margin-top:0">Nothing leaves your device. Literally.</h2>
 <p>Most apps that say this mean they promise not to upload your data. Upstairs means
-something stronger and checkable: <strong>it ships without network permission at all.</strong>
-The app has no ability to open a connection, so the promise is not a policy that could
-change. It is a property of the binary.</p>
-<p>You do not have to take our word for it. On a Mac, in Terminal:</p>
+something stronger and checkable: <strong>there is no code in this app that opens a
+connection.</strong> One file talks to Apple about buying the app, and a test in the suite
+fails if networking appears anywhere else. The promise is not a policy that could change.
+It is a property of the code that ships.</p>
+<p>On the Mac it goes further: the app is sandboxed and never asks for the network
+entitlement, so the system itself would refuse it a connection. You do not have to take
+our word for that one. In Terminal:</p>
 <pre><code>codesign -d --entitlements - /Applications/Upstairs.app</code></pre>
 <p><code>com.apple.security.network.client</code> is absent from the output. That is the
 entitlement an app needs to reach the network, and Upstairs does not have it.</p>
